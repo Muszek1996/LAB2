@@ -1,3 +1,3 @@
-public enum ItemCondiotion {
+public enum ItemCondition {
     New, Used, Refubrished
 }

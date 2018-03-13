@@ -1,27 +1,40 @@
 public class Item implements Comparable<Item>{
-    String nazwa;
-    ItemCondiotion stan;
-    double masa;
-    int ilość;
+    String name;
+    ItemCondition state;
+    double mass;
+    int quantity;
 
-    public Item(String nazwa, ItemCondiotion stan, double masa, int ilość) {
-        this.nazwa = nazwa;
-        this.stan = stan;
-        this.masa = masa;
-        this.ilość = ilość;
+    public Item(String name, ItemCondition state, double mass, int quantity) {
+        this.name = name;
+        this.state = state;
+        this.mass = mass;
+        this.quantity = quantity;
+    }
+    public Item(Item source) {
+        this.name = source.name;
+        this.state = source.state;
+        this.mass = source.mass;
+        this.quantity = source.quantity;
     }
 
     public void Print(){
-        System.out.println("Nazwa:"+ nazwa);
-        System.out.println("Stan:"+ stan.name());
-        System.out.println("Masa:"+ masa);
-        System.out.println("Ilość:"+ ilość);
+        System.out.println("Nazwa:"+ name);
+        System.out.println("Stan:"+ state.name());
+        System.out.println("Masa:"+ mass);
+        System.out.println("Ilość:"+ quantity+"\n");
 
     }
 
     @Override
     public int compareTo(Item o) {
-        return nazwa.compareTo(o.nazwa);
+        return name.compareTo(o.name);
     }
+
+
+    public int compareAmount(Item o) {
+        return Integer.compare(o.quantity,quantity) ;
+    }
+
+
 
 }
